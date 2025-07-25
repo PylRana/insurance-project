@@ -1,0 +1,57 @@
+USE insurance;
+
+SELECT * FROM insurance;
+
+--PROJECT TASK
+--TASK1
+--1. Retrieve records where BMI is between 25 and 30 (inclusive).
+SELECT * FROM insurance
+WHERE bmi BETWEEN 25 AND 30;
+
+--2. Insert a new record for an insured individual with the following details: Age: 35, Sex: Female, BMI: 28, Children: 1, Smoker: No, Region: Southeast, Charges: 5,000
+INSERT INTO insurance(age,sex,bmi,children,smoker,region,expenses)
+VALUES (35,'female',28,1,'no','southeast',5000);
+
+--3. Delete records of insured individuals from the Southwest region who are non-smokers.
+DELETE FROM insurance
+WHERE region='southwest' AND smoker='no';
+
+
+--TASK 2
+--1  Calculate the average charges for insured individuals based on their smoking status
+SELECT smoker,ROUND(AVG(expenses),2) AS average_expenses FROM insurance
+GROUP BY smoker;
+
+--2. Create a new table named high_bmi(claims) insured containing records of individuals with a BMI greater than 30.
+SELECT * INTO claims FROM insurance
+WHERE bmi>30;
+
+--3. Perform a right join to display records from the claims table and matched records from the insurance table.
+SELECT * FROM claims
+RIGHT JOIN insurance ON claims.age=insurance.age;
+
+-- TASK3
+
+--1. Identify the proportion of smokers vs non-smokers within each region.
+select smoker , region, COUNT (*)FROM insurance
+group by smoker,region;
+
+
+--  2. Display the distribution of BMI values using histogram-like queries for specified ranges.
+
+
+--3. Export the summarized SQL query results into a Business Intelligence (BI) tool (e.g., Tableau, Power BI) and create at least two dashboards:
+
+--• Dashboard 1: Regional Premium Insights (showing average and total charges by region).
+
+
+--• Dashboard 2: Demographic Breakdown (visualizing age, BMI, and smoking status distributions)
+
+--TASK 4
+--1. Calculate the total charges and average BMI for each region.
+SELECT region,ROUND(SUM(expenses),2) AS total_charge, ROUND(AVG(bmi),2) AS average_bmi FROM insurance
+GROUP BY region;
+
+--2. Extract a refined subset of data where insured individuals have a BMI above 30, are smokers, and have more than 2 children.
+SELECT * FROM insurance
+WHERE bmi>30 AND smoker='yes' AND children>2;
