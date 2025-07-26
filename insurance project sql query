@@ -38,14 +38,17 @@ group by smoker,region;
 
 
 --  2. Display the distribution of BMI values using histogram-like queries for specified ranges.
+PLEASE SEE MY HISTOGRAM FILE ON THE LEFT SIDE OF THIS FILE.
 
 
 --3. Export the summarized SQL query results into a Business Intelligence (BI) tool (e.g., Tableau, Power BI) and create at least two dashboards:
 
 --• Dashboard 1: Regional Premium Insights (showing average and total charges by region).
+PLEASE SEE MY REGIONAL DASHBOARD ON THE LEFT SIDE OF THIS FILE.
 
 
 --• Dashboard 2: Demographic Breakdown (visualizing age, BMI, and smoking status distributions)
+PLEASE SEE MY DEMOGRAPHIC DASHBOARD ON THE LEFT SIDE OF THIS FILE.
 
 --TASK 4
 --1. Calculate the total charges and average BMI for each region.
