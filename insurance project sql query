@@ -30,7 +30,7 @@ WHERE bmi>30;
 SELECT * FROM claims
 RIGHT JOIN insurance ON claims.age=insurance.age;
 
--- TASK3
+-- TASK3 (Please see content folder on the left side of the github file for all task related to task 3)
 
 --1. Identify the proportion of smokers vs non-smokers within each region.
 select smoker , region, COUNT (*)FROM insurance
